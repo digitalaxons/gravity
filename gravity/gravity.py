@@ -1,5 +1,7 @@
 __author__ = 'Derek <digital axons (at) gmail>'
 import sys
+import os
+import syslog
 
 def showbanner():
 	print
@@ -19,5 +21,7 @@ def showusage():
 	print(" -h          Display this help and exit");
 	print(" -v          Output version information and exit\n");
 
-showbanner();
-showusage();
+showbanner()
+showusage()
+syslog.openlog("gravity", logoption=syslog.LOG_PID)
+syslog.syslog("Gravity starting")
